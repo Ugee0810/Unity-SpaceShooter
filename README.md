@@ -1,4 +1,10 @@
-## 22.07.26
+
+
+
+### 22.07.26
+<details>
+<summary><b>Open</b></summary>
+
 #### 주제 및 목적
 - 치매 환자의 치료를 돕기 위한 VR 순발력 퀴즈 게임
 #### 프로젝트 퀄리티 중점
@@ -41,7 +47,14 @@
 ### 질문, 숙제(치매 전문의에게 자문, 공식 자료  탐색)
 - Q1. VR장비에 대한 거부감?
 * * *
-## 22.07.27~28
+</div>
+</details>
+
+
+### 22.07.27~28
+<details>
+<summary><b>Open</b></summary>
+
 ### 핵심 기술
 - 신체 동작 감지 애니메이션 자동화
 - 보호자가 옆에서 지원하는 역할을 VR에서 대신 한다.
@@ -94,15 +107,9 @@
   - 회의록 작성
 ![image](https://user-images.githubusercontent.com/85896566/181436363-2ab44477-7f0a-498f-addb-1885e82ce0ee.png)
 
-해야할 일
+- 댄스 센트럴 + 비트세이버
 
-- 3D 모델링 사이트
-  - [turbosquid](https://www.turbosquid.com/ko/fbx-models)
-  - [cgtrader](https://www.cgtrader.com/free-3d-models)
-  - [myminifactory](https://www.myminifactory.com/)
+- 요가?
 
-
-댄스 센트럴 + 비트세이버
-
-
-요가?
+</div>
+</details>
