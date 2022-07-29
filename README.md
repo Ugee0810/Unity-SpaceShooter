@@ -109,8 +109,3 @@
 ![image](https://user-images.githubusercontent.com/85896566/181436363-2ab44477-7f0a-498f-addb-1885e82ce0ee.png)
 
 해야할 일
-
-- 3D 모델링 사이트
-  - [turbosquid](https://www.turbosquid.com/ko/fbx-models)
-  - [cgtrader](https://www.cgtrader.com/free-3d-models)
-  - [myminifactory](https://www.myminifactory.com/)
