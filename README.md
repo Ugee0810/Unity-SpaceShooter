@@ -110,7 +110,9 @@
 
 해야할 일
 
-- 3D 모델링 사이트
-  - [turbosquid](https://www.turbosquid.com/ko/fbx-models)
-  - [cgtrader](https://www.cgtrader.com/free-3d-models)
-  - [myminifactory](https://www.myminifactory.com/)
+
+
+댄스 센트럴 + 비트세이버
+
+
+요가?
