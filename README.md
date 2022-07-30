@@ -2,6 +2,9 @@
 <details>
 <summary><b>Open</b></summary>
 
+![image](https://user-images.githubusercontent.com/85896566/181909832-be073759-e515-4bcb-b8c7-e5ee9bcf544c.png)
+
+
 - 회의 일정 :: 22.07.30 20:00 ~
 - 회의 안건 ::
   1. 프로젝트 방향성이 결정됨에 따라, 팀 내에서 담당하여 활약하고 싶은 역할과 자신의 장, 단점 소개
