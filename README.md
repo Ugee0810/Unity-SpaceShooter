@@ -46,7 +46,7 @@
 
 ### ＃컨텐츠 요소
 - 미니 게임 모드
-  - 성적 시스템(데이터)
+  - 성적 시스템(진단 데이터)
     - ![image](https://user-images.githubusercontent.com/85896566/181909832-be073759-e515-4bcb-b8c7-e5ee9bcf544c.png)
 - 수집 요소(?)
 * * *
