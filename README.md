@@ -1,9 +1,11 @@
 # 22.08.12 발표[발표자 : 송환욱]
 ### ＃타임라인
 ![image](https://user-images.githubusercontent.com/85896566/184077358-364f0fa4-51db-489e-8f2e-c74678f16fa7.png)
+* * *
 
 ### ＃와이어 프레임
 ![Storyboard](https://user-images.githubusercontent.com/85896566/184078388-8c3afffb-296e-4dfa-8fc0-5fc6882d9f16.jpg)
+* * *
 
 ### ＃이전과 달라진 점
 - 개발 환경
@@ -11,7 +13,7 @@
   - UML다이어그램 툴 변경[Lucid Chart] -> [StarUML]
   - Custom Hierarchy 사용
     - ![image](https://user-images.githubusercontent.com/85896566/184078822-2a0a1c4e-23e9-4e22-b3b1-fa71f2b53dd5.png)
-
+* * *
 
 ### ＃핵심기술 "모션인식" 개발 레퍼런스 기술과 레퍼런스 상용 사례
 - 상용 사례(연관多)
