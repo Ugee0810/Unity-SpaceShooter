@@ -1,4 +1,102 @@
+- ★★★2주 뒤에 보여줄 핵심 정하기
+- 08/22(월) 컨설팅(모의 발표)
+- 08/26(금) 발표
+
+# 22.08.12 발표 이후 수정 내용
+
+문제인식, 실현가능성 -> '창업사업화 지원사업 사업계획서 작성 목차' 한글 파일 참고
+
+### ＃문제인식(개발 동기, 개발 목적, 목표시장 분석)
+* * *
+
+
+### ＃실현가능성(개발 방안 / 진행(준비) 정도
+* * *
+
+
+### ＃팀 구성(팀 현황 및 보유 역량)
+이름 | 주 역할 | - | - | - | - | 
+---:|:---:|:---:|:---:|:---:|:---:|
+송환욱 | 팀 리더 | 개발 디렉터 | 게임 로직 | AI 커스텀 레벨 디자인 | 보안
+강원우 | UI/UX 요소 제작 |  | 스테이지(Scene) 제작 | 점수 디자인
+김재원 | UI/UX 요소 제작 | SFX | Assets Modeling
+최희원 | 기획 총괄 | 퀴즈 디자인 | 외부 디렉토리 접근
+
+- ★신체 동작 정의(동작별 운동 효과 + 칼로리 소모량) -> 성취도 효과
+- ★플레이어 모션그래픽
+
+- 역량
+  - 송환욱
+    - 
+  - 강원우
+    - 
+  - 김재원
+    - 
+  - 최희원
+    - 
+* * *
+
+
+### ＃개발 환경
+- VR - Oculus Quest 2
+- Unity - 2021.3.7f1
+- XR Interaction Toolkit - 2.0.2
+- GitHub - 버전 관리, 협업
+- Notion - 프로젝트 타임라인
+- StarUML - UML 다이어그램
+- MIRO - UI/UX 와이어 프레임
+* * *
+
+
+### ＃핵심 기술
+- 모션 인식 리듬 게임 + 퀴즈
+- AI 커스텀 레벨 디자인
+* * *
+
+
+### ＃프로젝트 내용
+- 장르
+  - VR
+  - 헬스 케어
+  - 음악
+  - 퀴즈
+- UI/UX 와이어 프레임(게임 진행)
+- 개발 타임라인(Notion)
+* * *
+
+### ＃레퍼런스
+- OhShape
+- 비트세이버
+- 신스라이더
+* * *
+
+
+### ＃2주 뒤 결과
+* * *
+
+
+### ＃희의록 모음
+
+<details>
+<summary><b>Open</b></summary>
+  
+![22 08 10 _001](https://user-images.githubusercontent.com/85896566/184311403-22287e03-85e2-4567-9fa0-26cd1f981fab.jpg)
+</br>
+![22 08 10 _002](https://user-images.githubusercontent.com/85896566/184311416-2600ba10-89bf-4971-9ae1-793bae0fa41a.jpg)
+</br>
+![22 08 10 _003](https://user-images.githubusercontent.com/85896566/184311422-cb39bb67-428b-4e92-9b61-e5ac124830ee.jpg)
+</br>
+![22 08 10 _004](https://user-images.githubusercontent.com/85896566/184311429-9c0d43db-11fa-4c7f-8edf-0f5d4f08be07.jpg)
+</div>
+</details>
+
+* * *
+
+
 # 22.08.12 발표[발표자 : 송환욱]
+<details>
+<summary><b>Open</b></summary>
+
 ### ＃타임라인
 ![image](https://user-images.githubusercontent.com/85896566/184077358-364f0fa4-51db-489e-8f2e-c74678f16fa7.png)
 * * *
@@ -35,6 +133,9 @@
 </br>
 ![22 08 10 _004](https://user-images.githubusercontent.com/85896566/184076987-df10373c-9a10-43b4-b42d-0b87dd555651.png)
 * * *
+
+</div>
+</details>
 
 # 22.08.01 발표[발표자 : 송환욱]
 <details>
