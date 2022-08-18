@@ -38,12 +38,6 @@ public class GameManager : MonoBehaviour
         Motion_0    = new GameObject[10];
 
         Generate();
-
-        //panelObjs = new string[] { "Block_Right",
-        //                           "Block_Left",
-        //                           "Block_Up",
-        //                           "Quiz",
-        //                           "Motion_0" };
     }
 
     private void Update()
