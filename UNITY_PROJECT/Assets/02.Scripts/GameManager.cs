@@ -5,72 +5,83 @@ using UnityEngine;
 // GameManager.cs
 public class GameManager : MonoBehaviour
 {
-    [Header("Prefab_Panels")]
-    public GameObject Prefab_Block_Right;
-    public GameObject Prefab_Block_Left;
-    public GameObject Prefab_Block_Up;
-    public GameObject Prefab_Quiz;
-    public GameObject Prefab_Motion_0;
+    [Header("[UI]")]
+    public GameObject lobby;
+    public GameObject inGame;
 
+    [Header("[Environment]")]
+    public GameObject originHome;
+    public GameObject panelLane;
+    public GameObject panelStartLight;
+    public GameObject panelDestroyColl;
+
+    [Header("[패널 프리팹]")]
+    public GameObject prefabBlockUp;
+    public GameObject prefabBlockRight;
+    public GameObject refabBlockLeft;
+    public GameObject prefabQuiz;
+    public GameObject prefabMotion_0;
+
+    // Pooling 초기화
+    [SerializeField] GameObject[] targetPool;
     // Panel Pooling
-    GameObject[] Block_Right;
-    GameObject[] Block_Left;
-    GameObject[] Block_Up;
+    GameObject[] BlockUp;
+    GameObject[] BlockRight;
+    GameObject[] BlockLeft;
     GameObject[] Quiz;
     GameObject[] Motion_0;
-
-    // SFX
+    // SFX Pooling
     // Sounds
 
-    // 초기화
-    GameObject[] targetPool;
-
-    public Transform panelSpawnPoint; // 패널 스타트 위치
+    [Header("[Music Start]")]
+    public Transform panelSpawnPoint; // 패널 생성 위치
     public float beat;
-    private float timer;
+    [SerializeField] float timer;
+
+    [Header("[플래그 변수]")]
+    [SerializeField] bool isStart = false; // 인게임 진행 상태
+    [SerializeField] bool isStop = false;  // 인게임 도중 일시 정지 상태
+    [SerializeField] bool isLevelEasy   = false;  // Level Easy
+    [SerializeField] bool isLevelNormal = false;  // Level Normal
+    [SerializeField] bool isLevelHard   = false;  // Level Hard
 
     private void Awake()
     {
-        Block_Right = new GameObject[10];
-        Block_Left  = new GameObject[10];
-        Block_Up    = new GameObject[10];
+        BlockUp    = new GameObject[10];
+        BlockRight = new GameObject[10];
+        BlockLeft  = new GameObject[10];
         Quiz        = new GameObject[10];
         Motion_0    = new GameObject[10];
 
-        Generate();
+        PoolGenerate();
     }
 
-    private void Update()
-    {
-        IngamePanelGenerate();
-    }
-
-    void Generate()
+    void PoolGenerate()
     {
         // #1. Panels
-        for (int index = 0; index < Block_Right.Length; index++)
+        for (int index = 0; index < BlockUp.Length; index++)
         {
-            Block_Right[index] = Instantiate(Prefab_Block_Right); // 풀링오브젝트 생성
-            Block_Right[index].SetActive(false); // 비활성화
+            BlockUp[index] = Instantiate(prefabBlockUp);
+            BlockUp[index].SetActive(false);
         }
-        for (int index = 0; index < Block_Left.Length; index++)
+        for (int index = 0; index < BlockRight.Length; index++)
         {
-            Block_Left[index] = Instantiate(Prefab_Block_Left);
-            Block_Left[index].SetActive(false);
+            BlockRight[index] = Instantiate(prefabBlockRight);
+            BlockRight[index].SetActive(false);
         }
-        for (int index = 0; index < Block_Up.Length; index++)
+        for (int index = 0; index < BlockLeft.Length; index++)
         {
-            Block_Up[index] = Instantiate(Prefab_Block_Up);
-            Block_Up[index].SetActive(false);
+            BlockLeft[index] = Instantiate(refabBlockLeft);
+            BlockLeft[index].SetActive(false);
         }
         for (int index = 0; index < Quiz.Length; index++)
         {
-            Quiz[index] = Instantiate(Prefab_Quiz);
+            Quiz[index] = Instantiate(prefabQuiz);
             Quiz[index].SetActive(false);
         }
         for (int index = 0; index < Motion_0.Length; index++)
         {
-            Motion_0[index] = Instantiate(Prefab_Motion_0);
+            Motion_0[index] = Instantiate(prefabMotion_0);
             Motion_0[index].SetActive(false);
         }
 
@@ -79,18 +90,18 @@ public class GameManager : MonoBehaviour
         // #3. Sounds
     }
 
-    public GameObject MakeObj(int type)
+    public GameObject MakeObj(int number)
     {
-        switch (type)
+        switch (number)
         {
             case 0:
-                targetPool = Block_Right;
+                targetPool = BlockUp;
                 break;
             case 1:
-                targetPool = Block_Left;
+                targetPool = BlockRight;
                 break;
             case 2:
-                targetPool = Block_Up;
+                targetPool = BlockLeft;
                 break;
             case 3:
                 targetPool = Quiz;
@@ -112,8 +123,22 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
+    public void InGameStart()
+    {
+        isStart = true;
+
+        lobby.SetActive(false);
+        originHome.SetActive(true);
+        panelLane.SetActive(true);
+        panelStartLight.SetActive(true);
+        panelDestroyColl.SetActive(true);
+
+        IngamePanelGenerate();
+    }
+
     void IngamePanelGenerate()
     {
+        if (!isStart) return;
 
         if (timer > beat)
         {
