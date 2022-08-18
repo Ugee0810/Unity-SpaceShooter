@@ -1,55 +1,133 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // GameManager.cs
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance; // 싱글톤 패턴을 사용하기 위한 인스턴스 변수
+    [Header("Prefab_Panels")]
+    public GameObject Prefab_Block_Right;
+    public GameObject Prefab_Block_Left;
+    public GameObject Prefab_Block_Up;
+    public GameObject Prefab_Quiz;
+    public GameObject Prefab_Motion_0;
 
-    public static GameManager Instance // 인스턴스에 접근하기 위한 프로퍼티
-    {
-        get
-        {
-            if (!_instance) // 인스턴스가 없는 경우에 접근하려 하면 인스턴스를 할당해준다.
-            {
-                _instance = FindObjectOfType(typeof(GameManager)) as GameManager;
+    // Panel Pooling
+    GameObject[] Block_Right;
+    GameObject[] Block_Left;
+    GameObject[] Block_Up;
+    GameObject[] Quiz;
+    GameObject[] Motion_0;
 
-                if (_instance == null) Debug.Log("No Singleton Obj");
-            }
-            return _instance;
-        }
-    }
+    // SFX
+    // Sounds
+
+    // 초기화
+    GameObject[] targetPool;
+
+    public Transform panelSpawnPoint; // 패널 스타트 위치
+    public float beat;
+    private float timer;
 
     private void Awake()
     {
-        if (_instance == null)
-            _instance = this;
-        else if (_instance != this) // 인스턴스가 존재하는 경우
-            Destroy(gameObject);    //   새로 생기는 인스턴스를 삭제
-        DontDestroyOnLoad(gameObject); // 장면이 전환되더라도 선언되었던 인스턴스가 파괴되지 않는다.
+        Block_Right = new GameObject[10];
+        Block_Left  = new GameObject[10];
+        Block_Up    = new GameObject[10];
+        Quiz        = new GameObject[10];
+        Motion_0    = new GameObject[10];
+
+        Generate();
+
+        //panelObjs = new string[] { "Block_Right",
+        //                           "Block_Left",
+        //                           "Block_Up",
+        //                           "Quiz",
+        //                           "Motion_0" };
     }
 
-
-
-
-
-    public void StartNewGame()
+    private void Update()
     {
-        StageLevel();
+        IngamePanelGenerate();
     }
 
-    public void StageLevel() {}
-    public void Score() { }
-    public void PlayTime() { }
-}
-
-// Example.cs
-public class Example : MonoBehaviour
-{
-    private void Start()
+    void Generate()
     {
-        GameManager.Instance.StartNewGame();
+        // #1. Panels
+        for (int index = 0; index < Block_Right.Length; index++)
+        {
+            Block_Right[index] = Instantiate(Prefab_Block_Right); // 풀링오브젝트 생성
+            Block_Right[index].SetActive(false); // 비활성화
+        }
+        for (int index = 0; index < Block_Left.Length; index++)
+        {
+            Block_Left[index] = Instantiate(Prefab_Block_Left);
+            Block_Left[index].SetActive(false);
+        }
+        for (int index = 0; index < Block_Up.Length; index++)
+        {
+            Block_Up[index] = Instantiate(Prefab_Block_Up);
+            Block_Up[index].SetActive(false);
+        }
+        for (int index = 0; index < Quiz.Length; index++)
+        {
+            Quiz[index] = Instantiate(Prefab_Quiz);
+            Quiz[index].SetActive(false);
+        }
+        for (int index = 0; index < Motion_0.Length; index++)
+        {
+            Motion_0[index] = Instantiate(Prefab_Motion_0);
+            Motion_0[index].SetActive(false);
+        }
+
+        // #2. SFX
+
+        // #3. Sounds
+    }
+
+    public GameObject MakeObj(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                targetPool = Block_Right;
+                break;
+            case 1:
+                targetPool = Block_Left;
+                break;
+            case 2:
+                targetPool = Block_Up;
+                break;
+            case 3:
+                targetPool = Quiz;
+                break;
+            case 4:
+                targetPool = Motion_0;
+                break;
+        }
+
+        // 풀링 타겟 갯수만큼 비활성화된 오브젝트에 접근하여 활성화 후, 반환
+        for (int index = 0; index < targetPool.Length; index++)
+        {
+            if (!targetPool[index].activeSelf)
+            {
+                targetPool[index].SetActive(true);
+                return targetPool[index];
+            }
+        }
+        return null;
+    }
+
+    void IngamePanelGenerate()
+    {
+
+        if (timer > beat)
+        {
+            GameObject panel = MakeObj(Random.Range(0, 5));
+            panel.transform.position = panelSpawnPoint.position;
+
+            timer -= beat;
+        }
+        timer += Time.deltaTime;
     }
 }
