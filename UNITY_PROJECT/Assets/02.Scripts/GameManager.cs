@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject lobby;
     public GameObject inGame;
 
+    [Header("[SFX]")]
+    public GameObject vizualizationObjects;
+
     [Header("[Environment]")]
     public GameObject originHome;
     public GameObject panelLane;
     public GameObject panelStartLight;
     public GameObject panelDestroyColl;
-
 
     [Header("[Music Start]")]
     public Transform panelSpawnPoint; // 패널 생성 위치
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(Panels[UnityEngine.Random.Range(0, 5)], panelSpawnPoint);
                 timer -= beat;
             }
+
             timer += Time.deltaTime;
         }
         else if (isStart && isStop)
@@ -57,6 +60,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+
             // 타이머, 패널 초기화
         }
 
@@ -73,6 +77,8 @@ public class GameManager : MonoBehaviour
     {
         isStart = true;
         lobby.SetActive(false);
+        inGame.SetActive(true);
+        vizualizationObjects.SetActive(true);
         originHome.SetActive(true);
         panelLane.SetActive(true);
         panelStartLight.SetActive(true);
