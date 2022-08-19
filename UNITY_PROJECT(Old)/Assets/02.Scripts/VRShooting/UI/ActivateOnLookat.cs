@@ -32,8 +32,7 @@ public class ActivateOnLookat : MonoBehaviour
             }
             else
             {
-                if (!target.enabled &&
-                    Time.time >= showingTime)
+                if (!target.enabled && Time.time >= showingTime)
                 {
                     target.enabled = true;
                 }
