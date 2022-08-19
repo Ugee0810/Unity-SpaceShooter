@@ -176,7 +176,12 @@ MonoBehaviour:
   isLevelEasy: 0
   isLevelNormal: 0
   isLevelHard: 0
-  panelType: 0
+  Panels:
+  - {fileID: -5146428889048157424, guid: f4bbcddc23fa716479fb89cdd182751e, type: 3}
+  - {fileID: -2434278357206912137, guid: a5896fc02d30cd246acf2b86a27383c0, type: 3}
+  - {fileID: 1410706452123408675, guid: ccca955453d1b6f44b11b13560df5ae1, type: 3}
+  - {fileID: -8415899834022702151, guid: da9e36d852c75ab4ea0099a3f3e7cd69, type: 3}
+  - {fileID: -3860120066320156748, guid: f3eda9bff55c48b42affa1486b75b00a, type: 3}
 --- !u!4 &11017396
 Transform:
   m_ObjectHideFlags: 0
@@ -3689,6 +3694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
