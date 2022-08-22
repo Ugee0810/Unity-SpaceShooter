@@ -34,6 +34,24 @@ public class GameManager : MonoBehaviour
     [Header("[패널 프리팹]")]
     public EnumPanel[] Panels;
 
+    public AudioSource _AudioSource_Music;
+
+    private void Awake()
+    {
+        StartCoroutine(FileIo());
+
+    }
+
+    IEnumerator FileIo()
+    {
+        WWW tmpWWW = new WWW(@"file://" + @"C:/ wav / 01.wav");
+
+        while (!tmpWWW.isDone)
+            yield return null;
+
+        //_AudioSource_Music.clip = tmpWWW.GetAudioClip(true, false);
+    }
+
     private void Update()
     {
         if (isStart)
@@ -84,4 +102,5 @@ public class GameManager : MonoBehaviour
         isStop = true;
         // 일시 정지 UI 출력
     }
+
 }
