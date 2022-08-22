@@ -31,13 +31,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool isLevelNormal = false; // Level Normal
     [SerializeField] bool isLevelHard = false;   // Level Hard
 
-    //[Header("[패널 프리팹]")]
-    //public GameObject prefabBlockUp;
-    //public GameObject prefabBlockRight;
-    //public GameObject refabBlockLeft;
-    //public GameObject prefabQuiz;
-    //public GameObject prefabMotion_0;
-
     [Header("[패널 프리팹]")]
     public EnumPanel[] Panels;
 
@@ -47,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             if (timer > beat)
             {
-                Instantiate(Panels[UnityEngine.Random.Range(0, 5)], panelSpawnPoint);
+                Instantiate(Panels[UnityEngine.Random.Range(0, 16)], panelSpawnPoint);
                 timer -= beat;
             }
 
@@ -56,6 +49,7 @@ public class GameManager : MonoBehaviour
         else if (isStart && isStop)
         {
             // 일시정지 UI 출력
+            
             // 패널/시간 정지
         }
         else
@@ -63,8 +57,6 @@ public class GameManager : MonoBehaviour
 
             // 타이머, 패널 초기화
         }
-
-        // 노래 경과 시간 불러와 감산하기
         // 경과 시간이 종료되면 결과 출력
     }
 
